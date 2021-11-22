@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head.ejs %>
+    <script src="/javascripts/adminGurus.js"></script>
+    <link href="/stylesheets/adminGuruEdit.css" rel="stylesheet" type="text/css">
+</head>
+<body class="adminGuruEdit">
+<% include ../partials/nav.ejs %>
+<div class="jumbotron animated fadeInLeft">
+    <div class="container">
+        <h1>Manage Gurus</h1>
+    </div>
+</div>
+<div class="container animated fadeInLeft">
+    <section id="add">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Add Category</h3>
+                <div class="form-group form-inline">
+                    <input class="form-control" id="newCat" name="newCat" placeholder="Category Name">
+                    <button onclick="addCategory()" class="btn btn-accent">Add Category</button>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-group form-inline">
+                    <h3>Add App</h3>
+                    <select id="catSelectAddApp" class="form-control catSelect">
+                        <option value="NULL">Select a Category</option>
+                        <% for(var i = 0; i < cats.length; i++) { %>
+                        <option value="<%= cats[i].CatId %>"><%= cats[i].Category %></option>
+                        <% } %>
+                    </select>
+                    <input class="form-control" name="newApp" id='newApp' placeholder="Application Name">
+                    <button class="btn btn-accent" onclick="addApp()">Add Application</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="edit">
+        <div class="row">
+            <div id="cats" class="col-md-6 form-group">
+                <h3>Edit Categories</h3>
+                <div id="catList">
+                    <% for(var i = 0; i < cats.length; i++) { %>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </span>
+                        <input class="form-control" data-toggle="tooltip" title="Double Click to Edit"
+                               value="<%= cats[i].Category %>" id="<%= cats[i].CatId %>" readonly="true"
+                               ondblclick="this.readOnly=''; $(this).addClass('upcats')">
+                        <span class="input-group-addon" data-toggle="modal" data-target="#deleteCatModal"
+                              onclick="popCatDelModal(<%= cats[i].CatId %>, '<%= cats[i].Category %>')"><i
+                                    class="glyphicon glyphicon-trash"></i></span>
+                    </div>
+                    <% } %>
+                </div>
+                <br>
+                <button class="btn btn-accent" onclick="updateCats()">Save</button>
+            </div>
+            <div class="col-md-6 form-group">
+                <h3>Edit Applications</h3>
+                <select id="catSelectApps" class="form-control" class="catSelect" onchange="upAppList(this.value)">
+                    <option>Select a Category</option>
+                    <% for(var i = 0; i < cats.length; i++) { %>
+                    <option value="<%= cats[i].CatId %>"><%= cats[i].Category %></option>
+                    <% } %>
+                </select>
+
+                <div id="editAppTarget">
+
+                </div>
+
+                <!--<input class="form-control" disabled style="visibility: hidden;">-->
+            </div>
+        </div>
+    </section>
+</div>
+<div id="deleteCatModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Delete Category</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete the <span id="catToDel"></span> category? This will also delete
+                    <strong>ALL</strong>
+                    applications and ratings listed in this category. <br> <u class="text-danger">This cannot be
+                        undone</u></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="delCatBtn" data-dismiss="modal" onclick="delCat()">
+                    Delete
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="deleteAppModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Delete Application</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete <span id="appToDel"></span> from the Gurus? This will also delete
+                    <strong>ALL</strong>
+                    ratings associated with this application <br><u class="text-danger">This cannot be
+                        undone</u></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="delAppBtn" data-dismiss="modal" onclick="delApp()">
+                    Delete
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

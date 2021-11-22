@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title> Test TD Ticket </title>
+  </head>
+  <body>
+    <script>
+      document.domain = 'byui.edu'
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch('https://td.byui.edu/TDNext/Apps/33/Tickets/New?formId=214', {mode: 'no-cors'}).then((html) => {
+          console.log(html)
+        })
+      })
+    </script>
+    <iframe src="https://td.byui.edu/TDNext/Apps/33/Tickets/New?formId=214" width="100%" height="100%"/></iframe>
+  </body>
+</html>

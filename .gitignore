@@ -1,0 +1,11 @@
+connectionString.js
+node_modules/
+.idea
+cache/*
+iisnode/
+npm-debug.log
+employeePics/
+!employeePics/default.png
+
+cache/
+uploads/

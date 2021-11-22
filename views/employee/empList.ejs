@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head.ejs %>
+    <title>FTC Employees | Employee List</title>
+</head>
+<body>
+<% include ../partials/nav.ejs %>
+<div class="jumbotron animated fadeInLeft">
+    <div class="container">
+        <h1>Employee List</h1>
+        <div class="row">
+            <!--searches the table by using a javascript function-->
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><span
+                            class="glyphicon glyphicon-search"></span></span>
+                <input id="search" class="form-control" onkeyup="cardSearch('search','cards')"
+                       placeholder="Search by Name">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container animated fadeInLeft">
+    <section>
+        <ul id="cards" style="list-style: none">
+        <div class="row text-center">
+            <% for(var i = 0; i < emps.length; i++) { %>
+            <li><div class="col-sm-12 col-md-6 col-lg-4 animated fadeIn">
+                <div class="panel <% if(i % 2 == 0 ) {%>panel-accent<%} else {%> panel-primary <%}%> empCard">
+                    <div class="panel-heading">
+                        <span><h4><%= emps[i].Full_Name %></h4></span>
+                    </div>
+                    <div class="panel-body text-center">
+                        <img src="<%= emps[i].Picture %>" class="img img-responsive">
+                    </div>
+                        <div class="panel-footer">
+                        <span><h5><% if(!emps[i].Phone){ %>Not Available<%}else{%><%= emps[i].Phone%><%}%></h5></span>
+                        <span><h5><a href="mailto:<%= emps[i].Email%>" target="_blank"><%= emps[i].Email%></a></h5></span>
+                        <h5><%= emps[i].Assignment%></h5>
+                        </div>
+
+                </div>
+            </div>
+           <% }%>
+        </div></li>
+        </ul>
+    </section>
+</div>
+<script src="/javascripts/tableSearch.js" type="text/javascript" rel="script"></script>
+</body>
+</html>

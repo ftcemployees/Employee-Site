@@ -1,0 +1,19 @@
+//SQL command to get gururating table data with employee and application names
+SELECT e.first_name, e.last_name, g.Rating, a.Application INTO OUTFILE 'file2.csv'
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '\"'
+LINES TERMINATED BY '\n'
+FROM gururatings g JOIN employee_info e ON g.EmpId = e.id JOIN applications a ON g.AppId = a.AppId LIMIT 5;
+
+//To login to mySQL
+mysql -u web -p
+
+//Database Info
+host: 'ftcemp.byui.edu',
+  user: 'web',
+  password: 'BPaT6GgvoL13ctiT',
+  database: 'employee_site'
+
+type command 'USE [databse name]' to access specific database
+
+type 'show tables;' to view tables in database

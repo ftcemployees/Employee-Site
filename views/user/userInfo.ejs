@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head.ejs %>
+    <!--<link rel="stylesheet" type="text/css" href="/stylesheets/userInfo.css">-->
+    <!--<link href="/stylesheets/login.css" rel="stylesheet" type="text/css">-->
+    <style>
+        .section {
+            padding-bottom: 15%; }
+
+        h3 {
+            border: none;
+            padding: inherit; }
+
+        .btn-file {
+            position: relative;
+            overflow: hidden; }
+        .btn-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block; }
+
+    </style>
+</head>
+<body class="userInfo">
+<% include ../partials/nav.ejs %>
+<% include changePwd.ejs %>
+<% include uploadPicture.ejs %>
+<div class="container animated fadeInLeft">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Personal Information</h1>
+        </div>
+    </div>
+    <br>
+
+    <div class="panel panel-accent">
+        <div class="panel-heading">
+            <h3><%= user.Full_Name %></h3>
+        </div>
+        <div class="panel-body">
+            <br><br>
+            <div class="row">
+                <!--TODO add avatar option to employee_info-->
+                <div class="col-md-3 text-center">
+                    <a data-target="#uploadPicture" data-toggle="modal" title="Click to Edit">
+                        <img class="img-responsive" data-toggle='tooltip' title="Click to Edit" width="100%" src="<%= user.Picture %>">
+                    </a>
+                </div>
+                <form id="userInfo">
+                    <div class="col-md-3">
+                        <div class="section">
+                            <label for="fname">First Name</label>
+                            <input name="fname" id="fname" class="form-control" value="<%= user.First_Name %>">
+                        </div>
+                        <div class="section">
+                            <label for="username">Username</label>
+                            <input name="username" id="username" class="form-control" value="<%= user.Username %>">
+                        </div>
+                        <div class="section">
+                            <label for="phone">Phone</label>
+                            <input name="phone" id="phone" class="form-control" value="<%= user.Phone %>">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="section">
+                            <label for="lname">Last name</label>
+                            <input name="lname" id="lname" class="form-control" value="<%= user.Last_Name %>">
+                        </div>
+                        <div class="section">
+                            <label for="email">Email</label>
+                            <input name="email" id="email" class="form-control" value="<%= user.Email %>">
+                        </div>
+                        <div class="section">
+                            <label for="team">Team</label>
+                            <h4 id="team">
+                                <!--Display team icon-->
+                                <% switch(user.TeamId) {
+                                case 1: %>
+                                <i class="fa fa-video-camera"></i>
+                                <% break;
+                                case 2: %>
+                                <i class="fa fa-photo"></i>
+                                <% break;
+                                case 3: %>
+                                <i class="fa fa-newspaper-o"></i>
+                                <% break;
+                                case 4: %>
+                                <i class="fa fa-code"></i>
+                                <% break; } %>
+                                <!--display team name-->
+                                <%= user.Team %></h4>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="inline">
+                        <button type="button" onclick='updateUser()' id='save' class="btn" disabled>Save Changes
+                        </button>
+                        <button type="button" data-target='#changePwd' data-toggle="modal" id='changePwd' class="btn btn-accent">Change Password</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script rel="script" type="text/javascript" src="/javascripts/userInfo.js"></script>
+</body>
+</html>

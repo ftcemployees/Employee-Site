@@ -1,0 +1,48 @@
+.btn-primary
+  color: $primary-color-text
+  background-color: $primary-color
+  border-color: $primary-color
+  &:hover, &:focus, &:active, &.active
+    background-color: $primary-color-dark
+    border-color: $primary-color-dark
+    color: $primary-color-text
+  &.disabled
+    &:hover, &:focus, &:active, &.active
+      background-color: $primary-color-dark
+      border-color: $primary-color-dark
+      color: $primary-color-text
+  &[disabled]
+    &:hover, &:focus, &:active, &.active
+      background-color: $primary-color-dark
+      border-color: $primary-color-dark
+
+
+fieldset[disabled] .btn-primary
+  &:hover, &:focus, &:active, &.active
+    background-color: $primary-color-highlight
+    border-color: $primary-color-highlight
+
+
+.btn-accent
+  color: $background-color
+  background-color: $accent-color
+  border-color: $accent-color
+  &:hover, &:focus, &:active, &.active
+    background-color: $accent-color-highlight
+    border-color: $accent-color-highlight
+    color: $background-color
+  &.disabled
+    &:hover, &:focus, &:active, &.active
+      background-color: $accent-color-highlight
+      border-color: $accent-color-highlight
+      color: $background-color
+  &[disabled]
+    &:hover, &:focus, &:active, &.active
+      background-color: $accent-color-highlight
+      border-color: $accent-color-highlight
+
+
+fieldset[disabled] .btn-accent
+  &:hover, &:focus, &:active, &.active
+    background-color: #9A264D
+    border-color: #9A264D

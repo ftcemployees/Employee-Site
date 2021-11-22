@@ -1,0 +1,70 @@
+@import "partials/palette"
+$dropDown       : false
+.navbar-default
+  background-color: $primary-color
+  border-color: $primary-color
+  .navbar-brand
+    color: $primary-color-text
+    &:hover, &:focus
+      color: $primary-color-text
+  .navbar-text
+    color: $primary-color-text
+  .navbar-nav
+    > li
+      > a
+        color: $primary-color-text
+        &:hover, &:focus
+          color: $primary-color-text
+        span
+          color: $primary-color-text
+      @if $dropDown
+        > .dropdown-menu
+          background-color: $primary-color
+          > li
+            > a
+              color: $primary-color-text
+              &:hover, &:focus
+                color: $primary-color-light
+                background-color: $primary-color
+            &.divider
+              background-color: $primary-color
+    @if $dropDown
+      .open .dropdown-menu > .active
+        > a, > a:hover, > a:focus
+          color: $primary-color-text
+          background-color: $primary-color-dark
+    > .active
+      > a, > a:hover, > a:focus
+        color: $primary-color-text
+        background-color: $primary-color-dark
+    > .open
+      > a, > a:hover, > a:focus
+        color: $primary-color-text
+        background-color: $primary-color-dark
+  .navbar-toggle
+    border-color: $primary-color-dark
+    &:hover, &:focus
+      background-color: $primary-color
+    .icon-bar
+      background-color: $primary-color-text
+  .navbar-collapse,
+  .navbar-form
+    border-color: $primary-color-text
+  .navbar-link
+    color: $primary-color-text
+    &:hover
+      color: $primary-color-text
+@media (max-width: 767px)
+  .navbar-default .navbar-nav .open .dropdown-menu
+    > li > a
+      color: $primary-color-text
+      &:hover, &:focus
+        color: $primary-color-text
+    > .active
+      > a, > a:hover, > a:focus
+        color: $primary-color-text
+        background-color: $primary-color
+
+.dropdown:hover .dropdown-menu
+  display: block
+  margin-top: 0

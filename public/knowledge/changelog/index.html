@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--load all styles -->
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+</head>
+
+<body>
+
+    <p id='logs'>
+        <button type="button" class="collapsible">Past Changes</button>
+        <span class="content" style="padding:40px;">
+            <br><strong>8.18.2020 : release (1.0.0)</strong><br>
+            &emsp;Queries: 126<br>
+            &emsp;Palettes: 8<br>
+            &emsp;Hits: 29<br>
+            <br><strong>9.1.2020 : first public update (1.1.0)</strong><br>
+            &emsp;Queries: 129<br>
+            &emsp;Palettes: 8<br>
+            &emsp;Hits: 45<br>
+            <br><strong>9.8.2020 : updated instructions to include back-slashes (1.2.0)</strong><br>
+            &emsp;Queries: 135<br>
+            &emsp;Palettes: 9<br>
+            &emsp;Hits: 81<br>
+            <br><strong>9.10.2020 : small query update (1.2.1)</strong><br>
+            &emsp;Queries: 140<br>
+            &emsp;Palettes: 9<br>
+            &emsp;Hits: 90<br>
+            <br><strong>9.11.2020 : small query update (1.2.2)</strong><br>
+            &emsp;Queries: 143<br>
+            &emsp;Palettes: 9<br>
+            &emsp;Hits: 98<br>
+        </span>
+        <br>
+        <br><strong>9.15.2020 : query update + clarifications, as well as minimization of changelogs (1.2.4)</strong><br>
+        <button type="button" class="collapsible">Clarifications</button>
+        <span class="content">
+            On the question about removing the underlines on homepage buttons, I've added some more context to show exactly where the CSS goes.<br>
+            On various questions about past courses, I've updated them to explain when an 'extended incomplete section' is needed and when it isn't.<br>
+            I've added information about how cross-listing should work.
+        </span>
+        &emsp;Queries: 149<br>
+        &emsp;Palettes: 9<br>
+        &emsp;Hits: 106<br>
+        <br><strong>9.18.2020 : query update (thanks Lucas!) (1.2.5)</strong><br>
+        &emsp;Queries: 150<br>
+        &emsp;Palettes: 9<br>
+        &emsp;Hits: 130<br>
+        <br><strong>9.25.2020 : palettes (1.2.6)</strong><br>
+        &emsp;Queries: 150<br>
+        &emsp;Palettes: 11<br>
+        &emsp;Hits: 150<br>
+        <br><strong>10.09.2020 : JP made a query!(1.2.7)</strong><br>
+        &emsp;Queries: 153<br>
+        &emsp;Palettes: 11<br>
+        &emsp;Hits: 170<br>
+        <br><strong>11.02.2020 : Massive content update, and Holly has been trained as an editor(1.3.0)</strong><br>
+        &emsp;Queries: 167<br>
+        &emsp;Palettes: 11<br>
+        &emsp;Hits: 202<br>
+        <span id="map" style="padding-top:120px">
+            <br>
+            <em>For major updates- improved or new functionality, updated instructions, or added automation, increment on the first sublevel (i.e. 1.0.0 ->1.1.0). Each time you update the entries, increment the second sublevel (1.1.0 -> 1.1.1), then update the &lt;title&gt; tag in the main index.html to include the version number.</em><br>
+    </p>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display == "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+
+    </script>
+
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+    <div style="width:50vw;margins:auto;padding-top:50px;">
+        <svg version="1.1" id="Laag_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="170px" height="170px" viewBox="0 0 800 800" enable-background="new 0 0 800 800" xml:space="preserve">
+            <g>
+                <path d="M400,424.448c-82.072-278.903-271.569-202.627-271.569-202.627c0-31.883,46.676-46.676,46.676-46.676
+		c13.658-2.277,27.322-10.251,27.322-10.251c29.6-23.903,50.089-18.207,50.089-18.207c35.29-1.142,77.411,52.36,77.411,52.36
+		c-12.522-30.735-15.935-72.856-15.935-72.856c2.277-19.354,36.425-40.986,36.425-40.986C365.212,80.65,400,4.425,400,4.425
+		s34.788,76.226,49.581,80.78c0,0,34.147,21.631,36.425,40.986c0,0-3.413,42.122-15.935,72.856c0,0,42.121-53.502,77.411-52.36
+		c0,0,20.489-5.696,50.089,18.207c0,0,13.664,7.974,27.321,10.251c0,0,46.677,14.793,46.677,46.676
+		c0,0-189.497-76.275-271.569,202.634V424.448z" />
+                <path d="M400,480.234c0,0-59.82-150.268-161.14-209.466c0,0-54.644-20.49-92.211,17.077c0,0-220.853,184.421,27.322,327.863
+		c0,0,63.747-10.251,72.856-14.806c0,0-47.812-1.129-52.366-5.684c0,0-70.585-40.98-70.585-121.811c0,0-7.252-67.241,86.521-107.017
+		c0,0,72.863-4.555,158.241,129.778c0,0,25.051,200.356-169.622,173.041c0,0,34.154,17.076,60.334,43.263
+		c0,0,50.083,44.393,108.146-48.96c0,0-3.413,25.058-13.658,51.231c0,0-13.664,35.296,10.245,47.818
+		c0,0,30.851,19.348,35.917,33.012c5.066-13.664,35.917-33.012,35.917-33.012c23.909-12.522,10.245-47.813,10.245-47.813
+		c-10.245-26.18-13.658-51.23-13.658-51.23c58.063,93.346,108.146,48.953,108.146,48.953c26.18-26.18,60.334-43.263,60.334-43.263
+		c-194.673,27.321-169.622-173.035-169.622-173.035c85.379-134.333,158.241-129.784,158.241-129.784
+		c93.773,39.782,86.521,107.017,86.521,107.017c0,80.83-70.585,121.811-70.585,121.811c-4.555,4.555-52.367,5.69-52.367,5.69
+		c9.109,4.555,72.856,14.799,72.856,14.799c248.175-143.435,27.322-327.863,27.322-327.863
+		c-37.567-37.567-92.211-17.077-92.211-17.077C459.819,329.967,400,480.234,400,480.234z" />
+            </g>
+        </svg>
+        <svg version="1.1" id="Laag_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="170px" height="144px" viewBox="0 0 680 575" enable-background="new 0 0 680 575" xml:space="preserve">
+            <g>
+                <path d="M544.018,149.917c-49.575-33.949-98.144-57.167-105.608-60.67c-9.818,5.631-12.622,19.297-13.179,22.701
+		c4.489,6.708,36.095,55.001,40.979,91.972c4.409,33.386,7.432,83.085-17.12,129.021c-0.374,0.632-33.366,54.737-109.089,54.737
+		c-73.996,0-108.672-54.061-109.013-54.607l-0.075-0.13c-24.553-45.937-21.53-95.636-17.121-129.021
+		c4.883-36.965,36.482-85.253,40.978-91.97c-0.563-3.406-3.389-17.085-13.178-22.703c-7.47,3.504-56.036,26.723-105.609,60.67
+		c-47.85,32.767-106.184,82.31-116.652,134.433c12.767-18.099,52.365-65.149,141.426-105.63l0.467-0.152
+		c2.245-0.463,13.627-2.485,17.231,3.076c2.059,3.176,1.03,7.565-3.143,13.417c-1.618,3.397-27.342,58.425-22.462,106.531
+		l0.011,0.167c0.009,0.363,1.141,36.815,19.353,75.587c24.303,51.735,65.852,82.862,123.495,92.515
+		c2.729-0.15,18.636,0.049,22.253,24.646c0.054,0.412,4.955,36.938,22.04,69.125c17.097-32.209,21.985-68.711,22.033-69.088
+		c3.624-24.627,19.53-24.842,22.261-24.683c71.863-12.037,106.854-57.018,123.56-92.657c18.171-38.764,19.277-75.082,19.286-75.443
+		l0.012-0.168c4.881-48.106-20.844-103.134-22.462-106.531c-4.175-5.851-5.202-10.24-3.144-13.417
+		c3.602-5.564,14.985-3.538,17.231-3.076l0.468,0.152c89.061,40.481,128.658,87.531,141.425,105.63
+		C650.202,232.227,591.869,182.684,544.018,149.917z" />
+                <path d="M285.5,319.834c31.863,22.656,54.13,21.503,54.352,21.491l0.149,0.002h0.152c0.215,0.011,22.478,1.168,54.346-21.493
+		c31.519-22.414,35.769-46.915,35.769-67.925c0-18.477-4.312-28.575-12.9-48.694l-2.336-5.487
+		c-10.117-23.846-28.347-57.449-28.53-57.786C361.956,96.111,345.608,34.505,340,11.371c-5.609,23.135-21.958,84.745-46.516,128.596
+		c-0.169,0.313-18.401,33.921-28.515,57.761l-2.337,5.487c-8.589,20.119-12.9,30.217-12.9,48.694
+		C249.732,272.919,253.982,297.42,285.5,319.834z M301.442,178.888c20.82-34.936,36.413-67.765,36.567-68.093l1.99-3.876
+		l1.989,3.876c0.155,0.329,15.753,33.167,36.597,68.139c1.004,1.594,25.268,40.544,24.528,75.991l-0.021,1.058
+		c-0.254,12.982-0.604,30.761-23.61,46.134c-18.51,12.367-32.477,13.695-37.619,13.695c-0.898,0-1.526-0.04-1.863-0.069
+		c-2.261,0.204-17.737,0.905-39.483-13.626c-23.008-15.374-23.356-33.154-23.609-46.137l-0.021-1.055
+		C276.147,219.478,300.41,180.528,301.442,178.888z" />
+            </g>
+        </svg>
+    </div>
+</body>

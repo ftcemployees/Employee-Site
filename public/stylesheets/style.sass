@@ -1,0 +1,207 @@
+@import "partials/palette"
+@import "partials/buttons"
+@import "partials/nav"
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto:400,500,700')
+@import 'partials/animate.css'
+
+::-webkit-scrollbar
+  width: 6px
+  height: 6px
+  position: absolute
+
+
+::-webkit-scrollbar-button
+  width: 0
+  height: 0
+
+::-webkit-scrollbar-thumb
+  background: $primary-color-dark
+  border: 0 none #ffffff
+  //border-radius: 50px
+::-webkit-scrollbar-thumb:hover
+  background: $primary-color-dark
+  display: block
+
+::-webkit-scrollbar-thumb:active
+  background: $primary-color-dark
+
+::-webkit-scrollbar-track
+  background: #EAEEF2
+  border: 0 none #ffffff
+  border-radius: 50px
+  //border-radius: 50px
+
+::-webkit-scrollbar-track:hover
+  background: #EAEEF2
+
+::-webkit-scrollbar-track:active
+  background: #EAEEF2
+
+::-webkit-scrollbar-corner
+  background: transparent
+
+
+body
+  font-family: 'Roboto', sans-serif
+  margin-bottom: 1%
+  background-color: $background-color
+  .container
+    background-color: $background-color
+    padding: 20px
+  .navbar-default
+    margin-bottom: 0
+
+h1, h2, h3, h4
+  color: #f4f4f4
+  font-family: 'Open Sans Light', sans-serif
+  border-bottom: solid 1px #d3d3d3
+  padding-bottom: 3%
+.modal-title
+  border: none
+p, a
+  font-family: 'Roboto', sans-serif
+.modal-body
+  p
+    font-size: 1.5em
+
+.navbar
+  border-radius: 0
+  img
+    width: 300px
+
+.navbar-right
+  float: right
+@media ( min-width: 200px)
+  .nav.navbar-nav.pull-right
+    float: left !important
+
+tr:nth-child(even)
+  color: #f4f4f4
+  background-color: $background-color !important
+tr:nth-child(odd)
+  background-color: $divider-color
+h1
+  text-align: center
+  border-bottom: solid 1px #d3d3d3
+  margin-bottom: 2%
+  padding-bottom: 1%
+
+.text-center
+  text-align: center
+.inline
+  display: inline-block
+.panel-primary
+  border: solid 1px $primary-color-dark
+  .panel-heading
+    background-color: $primary-color-dark
+    h1,h2, h3,h4,h5
+      border: none
+      padding: 0
+
+.panel-accent
+  border: solid 1px $accent-color
+  background-color: $divider-color
+  .panel-heading
+    background-color: $accent-color
+    color: $background-color
+    h1,h2, h3,h4,h5
+      border: none
+      color: $background-color
+      padding: 0
+  .panel-body
+    h1,h2, h3,h4,h5
+      border: none
+
+.panel-no-border
+  border: none
+
+.jumbotron
+  box-shadow: 0 1px 1px 4px rgba(0,0,0,.05)
+  background-color: $primary-color-dark
+  color: $primary-color-text
+  .container
+    background-color: inherit
+
+.login
+  .form-signin
+    max-width: 330px
+    padding: 15px
+    margin: 0 auto
+
+  .form-signin .form-signin-heading,
+  .form-signin .checkbox
+    margin-bottom: 10px
+
+  .form-signin .checkbox
+    font-weight: normal
+
+  .form-signin .form-control
+    position: relative
+    height: auto
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    padding: 10px
+    font-size: 16px
+
+  .form-signin .form-control:focus
+    z-index: 2
+
+
+
+  .form-signin input[type="text"]
+    margin-bottom: -1px
+    border-bottom-right-radius: 0
+    border-bottom-left-radius: 0
+
+  .form-signin input[type="password"]
+    margin-bottom: 10px
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+
+
+//Style for the Guru Management Page
+//.adminGuruEdit
+//  .editApp
+//    width: 60% !important
+//
+//  .appCatSelect
+//    width: 40% !important
+
+//Style for the User Info page
+//.userInfo
+//  .section
+//    padding-bottom: 15%
+//
+//  h3
+//    border: none
+//    padding: inherit
+
+.empCard
+  box-shadow: 0 1px 1px 4px rgba(0,0,0,.05)
+  img
+    width: 30%
+    display: inline
+    border-radius: 20px
+  h4, h3, h4
+    border: none
+  .panel-body
+    height: 170px
+  .panel-footer
+    height: 130px
+
+.flex-parent
+  a
+    box-shadow: 3px 3px 8px #888888
+
+.modal-title
+    padding-bottom: 0 !important
+
+.no-border
+  border: none
+
+.dark-text
+  color: $primary-text-color !important
+
+.dark-background
+  background-color: $divider-color

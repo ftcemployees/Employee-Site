@@ -1,0 +1,63 @@
+<DOCTYPE html>
+    <html>
+    <head>
+        <% include ../partials/head.ejs %>
+    </head>
+    <body>
+    <% include ../partials/nav.ejs %>
+    <div class="jumbotron animated fadeInLeft">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" id="header">
+                    <h1>FTC Guru's Ratings</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container animated fadeInLeft" style="padding-top: 0">
+        <div class="panel panel-accent panel-no-border">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-5">
+                        <label for="catSelect">Category</label>
+                        <select id="catSelect" class="form-control" onchange="upAppList(this.value)">
+                            <option>Select a Category</option>
+                            <% for(var i = 0; i < cats.length; i++) { %>
+                            <option value="<%= cats[i].CatId %>"><%= cats[i].Category %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="appSelect">Application</label>
+                        <select id="appSelect" class="form-control" onchange="upRatingsTable(this.value)">
+                            <option>Select an Application</option>
+                        </select>
+                    </div>
+                    <label hidden>Spacer</label>
+                    <div class="col-md-2"><a id='editRatingsBtn' style='margin-top: 15%;' role="button"
+                                             href="/empTools/editRatings" class="btn btn-default">Edit My Ratings</a>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <table class="table table-responsive">
+                        <thead>
+                        <tr>
+                            <th class="col-md-3">Name</th>
+                            <th class="col-md-3">Application</th>
+                            <th class="col-md-3">Rating</th>
+                            <th class="col-md-3">Certified</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        <!--Filled when an application is selected from the menu-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/javascripts/gurus.js"></script>
+    </body>
+    </html>
